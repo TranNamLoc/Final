@@ -8,12 +8,14 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class SignUp extends AppCompatActivity {
     Button facebook;
     Button google;
     Button signUp;
+    ImageButton back;
     Typeface typeface;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class SignUp extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_sign_up);
+        back = (ImageButton) findViewById(R.id.btn_back_tologin);
         facebook = (Button)findViewById(R.id.btn_facebook_signup);
         signUp = (Button)findViewById(R.id.btn_signup_signup);
         google = (Button) findViewById(R.id.btn_google_signup);
@@ -56,6 +59,13 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(SignUp.this,"Google clicked",Toast.LENGTH_LONG).show();
+            }
+        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent login= new Intent(SignUp.this, MainActivity.class);
+                startActivity(login);
             }
         });
     }
