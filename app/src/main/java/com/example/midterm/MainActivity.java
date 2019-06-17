@@ -57,6 +57,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(signUp);
             }
         });
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "facebook clicked",
+                        Toast.LENGTH_LONG).show();
+            }
+        });
+        google.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "google clicked",
+                        Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     }
